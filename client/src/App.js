@@ -36,6 +36,17 @@ class App extends React.Component {
       });
   }
 
+  deleteTodo = (id) => {
+    axios.delete(`/api/todos/${id}`)
+    .then(res => {
+      const todos = this.state.todos.filter( todos => {
+        if (todo.id !+ id)
+          return todo
+        })
+          this.setState({ todos })
+      })
+    }
+
   render() {
     const { name, todos } = this.state;
     return (
