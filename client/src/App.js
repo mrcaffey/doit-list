@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Header, Container, List, Input, Segment } from 'semantic-ui-react';
+import { Form, Header, Container, List, Input, Segment, Icon } from 'semantic-ui-react';
 import axios from 'axios';
 
 const styles = {
@@ -68,6 +68,7 @@ class App extends React.Component {
                   onClick={ () => this.updateTodo(todo.id) }
                 >
                   {todo.name}
+                  <Icon name= 'trash' onClick={() => this.deleteTodo(todo.id)} />
                 </List.Item> 
               )
             }
